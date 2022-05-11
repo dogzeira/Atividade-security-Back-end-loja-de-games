@@ -22,7 +22,7 @@ import com.generation.lojagames.repository.CategoriaRepository;
 @RestController
 @RequestMapping("/categorias")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-
+  
 public class CategoriaController {
 
 	@Autowired // auto fiação

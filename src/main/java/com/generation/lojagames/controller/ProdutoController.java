@@ -76,15 +76,12 @@ public class ProdutoController {
 	}
 
 	@DeleteMapping("/{id}") // método delete para deletar um produto
-    public ResponseEntity<Object> delete(@PathVariable Long id) {
-        return produtoRepository.findById(id)
-                .map(resposta -> {
-                    produtoRepository.deleteById(id);
-                    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-                })
-                .orElse(ResponseEntity.notFound().build());
-        
-       
-    }
+	public ResponseEntity<Object> delete(@PathVariable Long id) {
+		return produtoRepository.findById(id).map(resposta -> {
+			produtoRepository.deleteById(id);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}).orElse(ResponseEntity.notFound().build());
+
+	}
 
 }
